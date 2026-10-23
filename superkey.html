@@ -9,49 +9,95 @@
       *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
       html,body{margin:0;padding:0}
       body{
-        font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei",Arial,sans-serif;
-        background:linear-gradient(180deg,#F7FADF 0%,#EDF3D0 100%);color:#222;min-height:100vh;
-        padding:16px 14px 32px;
+        font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro SC","PingFang SC","HarmonyOS Sans SC","MiSans","Microsoft YaHei",sans-serif;
+        -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+        background:linear-gradient(170deg,#F8FBDF 0%,#EEF4D4 55%,#E6EEC4 100%);color:#1F2A00;min-height:100vh;
+        padding:24px 16px 40px;
+        position:relative;
       }
+      body::before{
+        content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFDD33'/%3E%3Cstop offset='1' stop-color='%23F5C400'/%3E%3C/linearGradient%3E%3CclipPath id='h'%3E%3Cpolygon points='100,12 182,56 182,144 100,188 18,144 18,56'/%3E%3C/clipPath%3E%3C/defs%3E%3Cpolygon points='100,12 182,56 182,144 100,188 18,144 18,56' fill='url(%23g)'/%3E%3Cg clip-path='url(%23h)' fill='%232E2E2E'%3E%3Crect x='10' y='46' width='180' height='13'/%3E%3Crect x='10' y='71' width='180' height='13'/%3E%3Crect x='10' y='96' width='180' height='13'/%3E%3Crect x='10' y='121' width='180' height='13'/%3E%3Crect x='10' y='146' width='180' height='13'/%3E%3C/g%3E%3C/svg%3E") center 38vh/72vmin no-repeat;
+        opacity:.08;
+      }
+      .wrap{max-width:420px;margin:0 auto;position:relative;z-index:1}
+      .brand{
+        text-align:center;margin-bottom:16px;
+      }
+      .brand .logo{
+        display:inline-block;width:58px;height:58px;margin-bottom:10px;
+        filter:drop-shadow(0 6px 14px rgba(200,160,0,.35));
+      }
+      h3{margin:0;font-size:21px;font-weight:600;letter-spacing:.5px;color:#3A4500}
+      .brand .sub{margin-top:4px;font-size:12px;color:#96A355;letter-spacing:1px}
       .card{
-        max-width:480px;margin:0 auto;background:#fff;border-radius:12px;
-        padding:20px 16px;box-shadow:0 2px 12px rgba(140,165,0,.18);
-        border-top:4px solid #C3D600;
+        background:rgba(255,255,255,.92);border-radius:18px;
+        padding:22px 18px;box-shadow:0 8px 28px rgba(140,165,0,.16);
+        backdrop-filter:blur(6px);
       }
-      h3{margin:0 0 18px;font-size:19px;text-align:center;color:#7A8F00}
       .field{margin-bottom:16px}
-      .field label{display:block;font-size:14px;color:#6B7A2A;margin-bottom:6px}
-      input[type="text"]{
-        width:100%;padding:11px 10px;font-size:16px;border:1px solid #D8E0B0;
-        border-radius:8px;background:#FBFCF3;outline:none;
+      .field label{
+        display:block;font-size:12px;font-weight:600;color:#8A9A3D;
+        letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;
       }
-      input[type="text"]:focus{border-color:#C3D600;background:#fff}
+      input[type="text"]{
+        width:100%;padding:13px 12px;font-size:17px;font-family:inherit;
+        border:1.5px solid #E2E8BE;border-radius:12px;background:#FCFDF4;
+        outline:none;transition:border-color .15s,background .15s,box-shadow .15s;
+      }
+      input[type="text"]::placeholder{color:#C2CA9A}
+      input[type="text"]:focus{
+        border-color:#C3D600;background:#fff;
+        box-shadow:0 0 0 3px rgba(195,214,0,.18);
+      }
+      #token{
+        font-size:26px;font-weight:700;text-align:center;letter-spacing:8px;
+        color:#5F7000;background:#F7FAE4;border-style:dashed;
+      }
       button,input[type="submit"]{
         -webkit-appearance:none;appearance:none;border:none;cursor:pointer;
-        font-size:16px;border-radius:8px;padding:11px 16px;width:100%;
+        font-size:16px;font-family:inherit;font-weight:600;border-radius:12px;
+        padding:13px 16px;width:100%;letter-spacing:.5px;
+        transition:transform .1s,opacity .15s;
       }
-      #showKey{background:#F2F7DC;color:#6B8000;margin-bottom:16px}
-      #genToken{background:#C3D600;color:#2F3B00;font-weight:600}
-      button:active,input[type="submit"]:active{opacity:.85}
-      .note{color:#AAB48A;font-size:12px;margin-top:16px;text-align:center}
+      button:active,input[type="submit"]:active{transform:scale(.97);opacity:.9}
+      #showKey{
+        background:#F1F6D8;color:#6B8000;margin-bottom:18px;font-size:14px;
+        border:1px dashed #C9D67E;
+      }
+      #genToken{
+        background:linear-gradient(145deg,#D3E23E,#B5CB00);
+        color:#2A3500;font-size:17px;font-weight:700;
+        box-shadow:0 6px 16px rgba(163,188,0,.35);
+      }
+      .note{color:#A9B37F;font-size:12px;margin-top:18px;text-align:center;letter-spacing:.5px}
+      .divider{
+        display:flex;align-items:center;gap:10px;margin:4px 0 16px;
+        color:#B4BF87;font-size:11px;letter-spacing:2px;
+      }
+      .divider::before,.divider::after{content:"";flex:1;height:1px;background:#E6ECBE}
     </style>
   </head>
   <body>
-    <div class="card">
-      <h3>资产烧录授权</h3>
-      <div class="field">
-        <label for="dayKey">dateKey</label>
-        <input type="text" id="dayKey"/>
+    <div class="wrap">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFDD33"/><stop offset="1" stop-color="#F5C400"/></linearGradient><clipPath id="lc"><polygon points="100,12 182,56 182,144 100,188 18,144 18,56"/></clipPath></defs><polygon points="100,12 182,56 182,144 100,188 18,144 18,56" fill="url(#lg)"/><g clip-path="url(#lc)" fill="#2E2E2E"><rect x="10" y="46" width="180" height="13"/><rect x="10" y="71" width="180" height="13"/><rect x="10" y="96" width="180" height="13"/><rect x="10" y="121" width="180" height="13"/><rect x="10" y="146" width="180" height="13"/></g></svg>
+        <h3>资产烧录授权</h3>
+        <div class="sub">ASSET BURN AUTHORIZATION</div>
       </div>
-      <button id="showKey">显示今日 dayKey</button>
-      <div class="field">
-        <label for="code">code</label>
-        <input type="text" id="code"/>
-      </div>
-      <input type="submit" id="genToken" value="getToken"/>
-      <div class="field" style="margin-top:16px">
-        <label for="token">token</label>
-        <input type="text" id="token"/>
+      <div class="card">
+        <div class="field">
+          <label for="dayKey">dateKey</label>
+          <input type="text" id="dayKey"/>
+        </div>
+        <button id="showKey">显示今日 dayKey</button>
+        <div class="field">
+          <label for="code">code</label>
+          <input type="text" id="code" placeholder="请输入 code"/>
+        </div>
+        <input type="submit" id="genToken" value="getToken"/>
+        <div class="divider" style="margin-top:18px">TOKEN</div>
+        <input type="text" id="token" readonly/>
       </div>
       <div class="note">说明：丰巢科技公司内部使用。</div>
     </div>
