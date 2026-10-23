@@ -99,6 +99,13 @@ document.getElementById("genToken").onclick = function(){
   document.getElementById("token").value = token;
 };
 
+/* 打开页面自动填充今日 dayKey */
+window.onload = function() {
+  var todayHex = h(new Date, "yyMMdd");
+  var expected = l(todayHex);
+  document.getElementById("dayKey").value = expected;
+};
+
 }]); // end wrapper
   </script>
   </body>
