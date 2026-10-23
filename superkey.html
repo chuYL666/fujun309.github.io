@@ -62,7 +62,7 @@
       }
       button:active,input[type="submit"]:active{transform:scale(.97);opacity:.9}
       #showKey{
-        background:#F1F6D8;color:#6B8000;margin-bottom:12px;font-size:13px;
+        background:#F1F6D8;color:#6B8000;font-size:13px;
         border:1px dashed #C9D67E;
       }
       #genToken{
@@ -87,17 +87,17 @@
       </div>
       <div class="card">
         <div class="field">
-          <label for="dayKey">dateKey</label>
-          <input type="text" id="dayKey"/>
-        </div>
-        <button id="showKey">显示今日 dayKey</button>
-        <div class="field">
           <label for="code">code</label>
           <input type="text" id="code" placeholder="请输入 code"/>
         </div>
         <input type="submit" id="genToken" value="getToken"/>
-        <div class="divider" style="margin-top:18px">TOKEN</div>
+        <div class="divider" style="margin-top:14px">TOKEN</div>
         <input type="text" id="token" readonly/>
+        <div class="divider" style="margin-top:16px">DATEKEY（自动填充）</div>
+        <div class="field" style="margin-bottom:10px">
+          <input type="text" id="dayKey"/>
+        </div>
+        <button id="showKey">显示今日 dayKey</button>
       </div>
       <div class="note">公司内部使用</div>
     </div>
